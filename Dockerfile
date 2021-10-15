@@ -18,6 +18,10 @@ RUN curl -fL -o /tmp/openshift-client.tar.gz https://mirror.openshift.com/pub/op
 
 # Download the operator-sdk for the operator bundle testing
     && curl -fL -o /usr/local/bin/operator-sdk https://github.com/operator-framework/operator-sdk/releases/download/"${operator_sdk_version}"/operator-sdk_linux_amd64 \
-    && chmod a+x /usr/local/bin/operator-sdk
+    && chmod a+x /usr/local/bin/operator-sdk \
+    
+# Download the yq tool
+    && curl -fL -o /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/2.2.1/yq_linux_amd64 \
+    && chmod a+x /usr/local/bin/yq
 
 COPY scorecard-basic-config.yml /tmp/config/
