@@ -1,6 +1,6 @@
 FROM registry.fedoraproject.org/fedora:32
 
-ARG operator_sdk_version=v1.13.1
+ARG operator_sdk_version=v1.16.0
 
 RUN  yum install -y \
 	--setopt=install_weak_deps=False \
