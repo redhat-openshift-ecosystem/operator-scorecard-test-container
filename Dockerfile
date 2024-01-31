@@ -1,15 +1,15 @@
-FROM registry.fedoraproject.org/fedora:37
+FROM registry.fedoraproject.org/fedora:39
 
-ARG operator_sdk_version=v1.28.0
+ARG operator_sdk_version=v1.33.0
 
-RUN  yum install -y \
+RUN  dnf install -y \
 	--setopt=install_weak_deps=False \
         jq \
         go \
         tree \
-	    gcc \
-	    ansible \
-    && yum clean all 
+	gcc \
+	ansible \
+    && dnf clean all 
 
 # Download and extract the openshift installer and client
 RUN curl -fL -o /tmp/openshift-client.tar.gz https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz \
